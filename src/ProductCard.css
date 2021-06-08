@@ -1,0 +1,24 @@
+.ProductCard {
+	border: 1px solid black;
+	width: 300px;
+	margin: 10px;
+}
+
+.ProductCard-details {
+	text-align: left;
+	margin: 25px;
+}
+
+.ProductCard-detail {
+	margin: 0px;
+}
+
+.ProductCard-image_url {
+	max-height: 250px;
+	width: auto;
+	max-width: 250px;
+}
+
+.ProductCard-buttons {
+	margin: 5px;
+}

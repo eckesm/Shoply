@@ -1,8 +1,26 @@
-import { render, screen } from '@testing-library/react';
+import React from 'react';
 import App from './App';
+import { render, fireEvent } from '@testing-library/react';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import reducer from './rootReducer';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+const store = createStore(reducer);
+
+it('renders without crashing', () => {
+	render(
+		<Provider store={store}>
+			<App />
+		</Provider>
+	);
+});
+
+it('adds item to cart on click', function() {
+	const { queryByDisplayValue, getByText, getByDisplayValue } = render(
+		<Provider store={store}>
+			<App />
+		</Provider>
+	);
+
+	// expect(queryByDisplayValue('tv')).not.toBeInTheDocument();
 });

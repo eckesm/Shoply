@@ -1,0 +1,4 @@
+.ProductList-products_div{
+    display: flex;
+    flex-wrap: wrap;
+}
