@@ -1,0 +1,36 @@
+.ProductDetail {
+	text-align: center;
+}
+
+.ProductDetail-div {
+	text-align: center;
+	width: 400px;
+	margin: auto;
+}
+
+.ProductDetail-details {
+	border: 1px solid black;
+	text-align: left;
+	margin: 5px;
+	padding: 10px;
+}
+
+.ProductDetail-detail {
+	margin: 0px;
+}
+
+.ProductDetail-image_url {
+	max-height: 350px;
+	width: auto;
+	max-width: 350px;
+}
+
+.ProductDetail-buttons {
+	margin: 5px;
+}
+
+.ProductDetail-button {
+	margin: 3px;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}

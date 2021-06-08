@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import './Cart.css';
 
 const Cart = () => {
@@ -13,7 +14,10 @@ const Cart = () => {
 				<div>
 					{Object.keys(cartItems).map(id => (
 						<p key={id} className="Cart-product">
-							<b>{products[id].name}:</b> {cartItems[id]} x {products[id].price.toFixed(2)} ={' '}
+							<Link to={`/products/${id}`}>
+								<b>{products[id].name}:</b>
+							</Link>{' '}
+							{cartItems[id]} x {products[id].price.toFixed(2)} ={' '}
 							{(cartItems[id] * products[id].price).toFixed(2)}
 						</p>
 					))}

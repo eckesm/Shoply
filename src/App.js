@@ -1,7 +1,9 @@
 import React from 'react';
 // import { useSelector } from 'react-redux';
+import Routes from './Routes';
+import Nav from './Nav';
 import Cart from './Cart';
-import ProductList from './ProductList'
+import ProductList from './ProductList';
 import './App.css';
 
 function App() {
@@ -10,8 +12,10 @@ function App() {
 
 	return (
 		<div className="App">
+			<Nav />
 			<Cart />
-			<ProductList />
+			{/* <ProductList /> */}
+			<Routes />
 		</div>
 	);
 }
