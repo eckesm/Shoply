@@ -2,11 +2,12 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { addProduct, removeProduct } from './actions';
 import { useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './ProductDetail.css';
 
 const ProductDetail = () => {
 	const { id } = useParams();
-	const products = useSelector(store => store.products);
+	const { products, cartItems } = useSelector(store => store);
 	const product = products[id];
 
 	const dispatch = useDispatch();
@@ -26,8 +27,21 @@ const ProductDetail = () => {
 					</p>
 				</div>
 				<div className="ProductDetail-buttons">
-					<button className="ProductDetail-button" onClick={addToCart}>Add to Cart</button>
-					<button className="ProductDetail-button" onClick={removeFromCart}>Remove from Cart</button>
+					<button className="ProductDetail-button" onClick={addToCart}>
+						Add to Cart
+					</button>
+
+					{cartItems[id] > 0 && (
+						<button className="ProductDetail-button" onClick={removeFromCart}>
+							Remove from Cart
+						</button>
+					)}
+
+					{cartItems[id] > 0 && (
+						<Link to="/cart">
+							<p className="ProductDetail-product_in_cart">{cartItems[id]} in cart!</p>
+						</Link>
+					)}
 				</div>
 				<img className="ProductDetail-image_url" src={product.image_url} alt={product.name} />
 			</div>

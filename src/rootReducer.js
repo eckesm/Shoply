@@ -17,6 +17,7 @@ const cartTotal = (products, cartItems) => {
 
 function rootReducer(state = INITIAL_STATE, action) {
 	const cartCopy = { ...state.cartItems };
+	
 	switch (action.type) {
 		case ADD:
 			cartCopy[action.id] = (cartCopy[action.id] || 0) + 1;
